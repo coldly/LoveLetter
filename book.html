@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="screen-orientation" content="portrait">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>The Art of War</title>
+		<span style="white-space:pre"></span><link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./css/book.css">
+
+	</head>
+	<body>
+		<div id="app">
+			<div class="pop" v-show="show" @click="zoomOut">
+				<img :src="imgUrl" style="cursor: zoom-out;position: absolute;max-height: 100%;max-width: 100%;vertical-align: middle;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+				<a target="_blank" class="check-original-image" :href="imgUrl" style="">查看原图</a>
+			</div>
+			<div class="book">
+				<div class="article">
+					<h1 class="chapter">Laying Plans</h1>
+					<div class="author">author</div>
+					<div class="paragraph">
+						<p>Sun Tzu said: The art of war is of vital importance to the State. <br></p>
+					</div>
+					<div class="image-view" @click="zoomIn($event)">
+						<img src="./1.jpg">
+					</div>
+					<div class="paragraph">
+						<p>It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected. <br></p>
+					</div>
+					<div class="image-view" @click="zoomIn($event)">
+						<img src="./3.jpg">
+					</div>
+          <div class="paragraph">
+						<p>The art of war, then, is governed by five constant factors, to be taken into account in one's deliberations, when seeking to determine the conditions obtaining in the field.<br></p>
+					</div>
+					<div class="image-view" @click="zoomIn($event)">
+						<img width="1024px" src="./4.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./vue.js"></script>
+		<script>
+			new Vue({
+				el: "#app",
+				data:{
+					imgUrl: "",
+					show: false
+				},
+				methods: {
+					zoomIn: function(e){
+						document.body.style.height = '100vh'
+        		document.body.style['overflow-y'] = 'hidden'
+						this.imgUrl = e.target.src
+						this.show = true
+					},
+
+					zoomOut: function(e){
+						this.show = false
+						document.body.style.height = 'unset'
+        		document.body.style['overflow-y'] = 'auto'
+					},
+				}
+			})
+		</script>
+	</body>
+</html>
