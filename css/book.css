@@ -1,0 +1,56 @@
+.book{
+  position: relative;
+}
+.article{
+  position: relative;
+  max-width: 1024px;
+  margin:0 auto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.chapter{
+  text-align:center;
+}
+.author{
+  position: relative;
+  margin:0 auto;
+  width: 860px;
+}
+.paragraph{
+  position: relative;
+  margin:0 auto;
+  width: 860px;
+}
+.image-view{
+  text-align:center;
+  cursor: zoom-in;
+  z-index: 10000000;
+}
+.pop{
+  position: fixed;
+  text-align:center;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999;
+  background: rgba(255, 255, 255, 0.8);
+}
+.check-original-image {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background-color: rgba(0,0,0,.4);
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  z-index: 10000001;
+}
